@@ -67,6 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter--;
     });
   }
+  void _resetCounter() {
+    setState(() {
+      _counter = 0;
+    });
+  }
 
 
   @override
@@ -124,9 +129,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           const SizedBox(width: 10),
           FloatingActionButton(
+            onPressed: _resetCounter,
+            child: const Icon(Icons.refresh),
+          ),
+          const SizedBox(width: 10),
+          FloatingActionButton(
             onPressed: _incrementCounter,
             child: const Icon(Icons.add),
           ),
+          
         ],
       ),
     );
